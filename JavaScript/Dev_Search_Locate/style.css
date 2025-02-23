@@ -1,0 +1,83 @@
+.general {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    /* align-items: center; */
+    gap: 10px;
+}
+
+#imageContent{
+    height: auto;
+    width: 50%;
+    display: flex;
+    padding: 3px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: 2px solid black;
+}
+
+
+
+#carte{
+    height: 100vh;
+    width: 50%;
+    border: 2px solid black;
+}
+
+#map { height: 180px; }
+
+
+h1{
+    text-align:  center;
+    text-transform: uppercase;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    padding: 1.5%;
+    gap: 50px;
+
+}
+
+form input {
+    /* padding: 10px 70px; */
+    padding-top: 20px;
+    padding-left: 15px;
+    border-radius: 20px;
+    padding-bottom: 5px;
+    padding-right: 50px;
+    width: 50%;
+    
+    
+    font-size: larger;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+form button {
+    border-radius: 20px;
+    padding: 17px;
+    background-color: green;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+    width: 20%;
+}
+
+.ImageFull{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background-color: blue;
+    top: 0%;
+    left: 20%;
+    right: 50%;
+    padding: 100px;
+    width: 50%;
+    border: 2px solid black;
+    box-shadow: 1px 1px 20px black;
+    z-index: 999999;
+
+}
