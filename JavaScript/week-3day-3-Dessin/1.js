@@ -10,6 +10,8 @@ canvas.height=600
 const ctx=canvas.getContext("2d")
 let couleur
 let Cx,Cy
+let Fx,Fy
+let Dx,Dy
 let isDrawing=false
 
 
@@ -20,6 +22,8 @@ function startDrawing(event){
     ctx.strokeStyle=couleur || "black"
 
     const {offsetX,offsetY}=event
+    Fx=offsetX
+    Fy=offsetY
     ctx.moveTo(offsetX,offsetY);
 
 }
@@ -33,7 +37,7 @@ function dessine(event){
     // console.log("i");
     const {offsetX,offsetY}=event
     Cx=offsetX
-    Cy=offsetX
+    Cy=offsetY
     ctx.lineTo(offsetX,offsetY)
 
     ctx.stroke();
@@ -87,7 +91,10 @@ clearBnt.addEventListener("click",function(){
 })
 
 cancelBnt.addEventListener("click",function(){
-  console.log(Cx,Cy);
+  // console.log(Cx,Cy);
+  Dx=Cx-Fx
+  Dy=Cy-Fy
   
-  ctx.clearRect(Cx,Cy,canvas.width,canvas.height)
+  ctx.clearRect(Dx,Dy,canvas.width,canvas.height)
+
 })
