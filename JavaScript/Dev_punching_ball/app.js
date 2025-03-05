@@ -5,6 +5,8 @@ const ctx=canvas.getContext("2d")
 canvas.width="1000"
 canvas.height="600"
 
+const audio=new Audio("./sound.mp3")
+
 let ball={
     x:canvas.width/2,
     y:canvas.height/2,
@@ -28,18 +30,37 @@ drawBall()
 function moveBall(){
     ball.x+=dx
     ball.y+=dy
+
+    let shadow=false
+
+
     if(ball.x+ball.rayon>canvas.width || ball.x-ball.rayon<0){
        dx=-dx
-      
+       shadow=true
+       audio.play()
     }
     if(ball.y+ball.rayon>canvas.height || ball.y-ball.rayon<0){
-        dy=-dy
+        dy=-dy  
+        shadow=true
+        audio.play()
     }
-    
 
- 
+
+    if(shadow){
+        canvas.style.boxShadow="1px 1px 20px 1px rgba(247, 3, 3, 1)"
+     
+        setTimeout(() => {
+            canvas.style.boxShadow="1px 1px 20px 1px rgb(43, 243, 16)"
+        }, 500);
+    }
+
+       
+  
+
     drawBall()
 }
+
+
 
 
 function animate(){
