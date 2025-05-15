@@ -80,8 +80,9 @@ canvas.addEventListener("mousedown",startDrawing)
 canvas.addEventListener("mouseup",stopDrawing)
 canvas.addEventListener("mousemove",dessine)
 
-colorBnt.addEventListener("change",function(){
+colorBnt.addEventListener("change",function(event){
   
+  event.target.value
   couleur=colorBnt.value
   
 })
